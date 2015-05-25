@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ugr-pV-aMT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Base Tab View Controller-->
+        <scene sceneID="p6p-np-hRt">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="ugr-pV-aMT" customClass="BaseTabViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eyb-wR-x1o">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wFY-xb-BeH" kind="relationship" relationship="viewControllers" id="IXM-Sp-2cT"/>
+                        <segue destination="srN-id-R0k" kind="relationship" relationship="viewControllers" id="PtT-k7-EoZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkT-oN-Day" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-57" y="408"/>
+        </scene>
+        <!--Picker View Controller - Gallery-->
+        <scene sceneID="qEI-1v-cHu">
+            <objects>
+                <viewController id="Y9l-9Z-IGU" customClass="PickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UMq-eC-Wq7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ixw-tn-KK9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qRT-iA-w3N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ggw-rG-oIM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XQ2-RA-Eua">
+                                    <size key="itemSize" width="104" height="104"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="hlh-C6-Cm5" customClass="PhotoCell">
+                                        <rect key="frame" x="0.0" y="64" width="104" height="104"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckO-k2-LYc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="104" height="104"/>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="ckO-k2-LYc" id="PTO-xR-uTI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y9l-9Z-IGU" id="d8k-ef-s9X"/>
+                                    <outlet property="delegate" destination="Y9l-9Z-IGU" id="aoc-l6-xxd"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ggw-rG-oIM" firstAttribute="leading" secondItem="qRT-iA-w3N" secondAttribute="leading" id="4IC-o1-qLu"/>
+                            <constraint firstAttribute="trailing" secondItem="ggw-rG-oIM" secondAttribute="trailing" id="AGc-X2-l4t"/>
+                            <constraint firstItem="ggw-rG-oIM" firstAttribute="top" secondItem="qRT-iA-w3N" secondAttribute="top" id="qiO-Mz-K3H"/>
+                            <constraint firstItem="Ixw-tn-KK9" firstAttribute="top" secondItem="ggw-rG-oIM" secondAttribute="bottom" id="zev-47-q3w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gallery" id="DdP-yY-AqH"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ggw-rG-oIM" id="pyx-vo-Lmn"/>
+                        <segue destination="7Ss-1V-8Aa" kind="push" identifier="viewImage" id="daf-D3-ve2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q3d-uf-Qs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="-429"/>
+        </scene>
+        <!--View Picture View Controller-->
+        <scene sceneID="NVo-UN-ymU">
+            <objects>
+                <viewController id="7Ss-1V-8Aa" customClass="ViewPictureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LQB-H3-s6i"/>
+                        <viewControllerLayoutGuide type="bottom" id="jIo-eL-w5d"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" minimumZoomScale="0.0" maximumZoomScale="4" id="1Sp-8j-7Og">
+                        <rect key="frame" x="0.0" y="94" width="320" height="474"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8o-g3-UfY">
+                                <rect key="frame" x="0.0" y="0.0" width="321" height="422"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="delegate" destination="7Ss-1V-8Aa" id="Npk-9M-OiS"/>
+                        </connections>
+                    </scrollView>
+                    <navigationItem key="navigationItem" id="nm5-dk-Aqa"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="N8o-g3-UfY" id="R6R-7y-sZ4"/>
+                        <segue destination="7gb-gb-PJw" kind="push" identifier="Share" id="IzP-lZ-mDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0q-Fx-3sJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="408"/>
+        </scene>
+        <!--Share Image View Controller - Share Your Image-->
+        <scene sceneID="627-MZ-wR1">
+            <objects>
+                <viewController id="7gb-gb-PJw" customClass="ShareImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k6h-bs-u69"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wjc-79-4VD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NXO-Bb-8Qa">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pct-Nw-B4v">
+                                <rect key="frame" x="71" y="29" width="179" height="170"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="nb8-BI-MPC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51C-rA-17U">
+                                <rect key="frame" x="20" y="291" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="FB">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="postToFaceBook:" destination="7gb-gb-PJw" eventType="touchUpInside" id="KDa-AR-kam"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTY-3h-Zef">
+                                <rect key="frame" x="200" y="291" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Twitter-Logo-chico">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <action selector="postToTwitter:" destination="7gb-gb-PJw" eventType="touchUpInside" id="gzJ-d4-sde"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pct-Nw-B4v" firstAttribute="centerX" secondItem="NXO-Bb-8Qa" secondAttribute="centerX" id="3no-Hv-jYF"/>
+                            <constraint firstItem="pct-Nw-B4v" firstAttribute="top" secondItem="k6h-bs-u69" secondAttribute="bottom" constant="29" id="6HD-os-buQ"/>
+                            <constraint firstItem="pct-Nw-B4v" firstAttribute="leading" secondItem="NXO-Bb-8Qa" secondAttribute="leading" constant="71" id="UwD-mL-iZL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Share Your Image" id="bbd-Jr-29m"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="shareView" destination="pct-Nw-B4v" id="3gL-XH-csP"/>
+                        <outlet property="view" destination="NXO-Bb-8Qa" id="Bwh-Ze-1Ch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5b-ZW-fyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1989" y="408"/>
+        </scene>
+        <!--Map Overlay View Controller - Map Overlay-->
+        <scene sceneID="L7F-tt-uHX">
+            <objects>
+                <viewController id="cnm-HB-Jzw" customClass="MapOverlayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FKL-AU-0Uf"/>
+                        <viewControllerLayoutGuide type="bottom" id="i0j-WM-6cG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SbT-sV-hH1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="14B-1f-6Bd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="cnm-HB-Jzw" id="2mo-oh-ZZm"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map Overlay" id="yVr-ej-c3M"/>
+                    <connections>
+                        <outlet property="mapView" destination="14B-1f-6Bd" id="6bV-v0-MEC"/>
+                        <segue destination="7Ss-1V-8Aa" kind="push" identifier="viewImage" id="9aZ-Ew-r4g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ue-dm-cTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="1279"/>
+        </scene>
+        <!--Navigation Controller - Gallery-->
+        <scene sceneID="x6q-Ta-qaP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wFY-xb-BeH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Gallery" image="tabBarOrlando" id="gqm-2Z-Cd3"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cYd-pM-sQ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y9l-9Z-IGU" kind="relationship" relationship="rootViewController" id="nmD-Fx-B8j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75v-b7-mp1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="-445"/>
+        </scene>
+        <!--Navigation Controller - Map-->
+        <scene sceneID="nNi-Nh-bey">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="srN-id-R0k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="submap" id="fVc-7F-k3c"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Ud-dN-WoI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cnm-HB-Jzw" kind="relationship" relationship="rootViewController" id="bfY-gQ-WXm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bt5-ps-V5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="481" y="1279"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FB" width="225" height="225"/>
+        <image name="Twitter-Logo-chico" width="100" height="100"/>
+        <image name="submap" width="30" height="30"/>
+        <image name="tabBarOrlando" width="24" height="24"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="9aZ-Ew-r4g"/>
+    </inferredMetricsTieBreakers>
+</document>
